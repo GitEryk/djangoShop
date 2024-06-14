@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% load thumbnail %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <div class="product-detail">
+        {% if product.image %}
+            {% thumbnail product.image 350x350 crop="100%" as thumb %}
+            <img src='{{ thumb.url }}'>
+        {% else %}
+            <img src='/static/img/no_image.png' style='width: 350px; height: 350px;'>
+        {% endif %}
+        <h1>{{ product.name }}</h1>
+        <h2>
+            <a href="{{ product.category.get_absolute_url }}">
+                {{ product.category }}
+            </a>
+        </h2>
+        <p class="price">{{ product.price }}PLN</p>
+        {{ product.description|linebreaks }}
+    </div>
+{% endblock %}
