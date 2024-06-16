@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'easy_thumbnails',
     'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
