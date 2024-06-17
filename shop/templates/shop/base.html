@@ -20,7 +20,7 @@
                             {{ total_item }} item{{ total_item|pluralize }},
                             {{ cart.get_total_price }}PLN
                         </a>
-                    {% else %}
+                    {% elif not order %}
                         Cart is empty
                     {% endif %}
                 {% endwith %}
